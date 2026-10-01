@@ -273,41 +273,56 @@
         </section>
 
         <section id="projects" aria-labelledby="projects-heading">
-            <h2 id="projects-heading">Project Status</h2>
+    <h2 id="projects-heading">Project Status</h2>
 
-            <table>
-                <caption>Current project status and ownership</caption>
+    <div class="project-controls">
+        <label for="project-search">Search</label>
+        <input
+            type="search"
+            id="project-search"
+            placeholder="Search products..."
+        >
 
-                <thead>
-                    <tr>
-                        <th scope="col">Project</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Owner</th>
-                    </tr>
-                </thead>
+        <label for="category-filter">Category</label>
+        <select id="category-filter">
+            <option value="all">All Categories</option>
+        </select>
 
-                <tbody>
-                    <tr>
-                        <td>Website Redesign</td>
-                        <td>In Progress</td>
-                        <td>Team A</td>
-                    </tr>
+        <label for="sort-projects">Sort</label>
+        <select id="sort-projects">
+            <option value="title-asc">Title A-Z</option>
+            <option value="title-desc">Title Z-A</option>
+            <option value="price-asc">Price Low-High</option>
+            <option value="price-desc">Price High-Low</option>
+        </select>
+    </div>
 
-                    <tr>
-                        <td>Mobile Application</td>
-                        <td>Completed</td>
-                        <td>Team B</td>
-                    </tr>
+    <div id="loading-state" aria-live="polite">
+        Loading projects...
+    </div>
 
-                    <tr>
-                        <td>Analytics Platform</td>
-                        <td>Planning</td>
-                        <td>Team C</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <div
+        id="error-state"
+        role="alert"
+        hidden
+    ></div>
 
+    <table>
+        <caption>Live data from REST API</caption>
+
+        <thead>
+            <tr>
+                <th scope="col">Project</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+
+        <tbody id="project-table-body">
+        </tbody>
+    </table>
+</section>
+                       
         <section id="contact" aria-labelledby="contact-heading">
             <h2 id="contact-heading">Contact Form</h2>
 
