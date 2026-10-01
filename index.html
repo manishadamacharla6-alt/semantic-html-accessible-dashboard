@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Accessible enterprise dashboard built with semantic HTML5."
+    >
+    <title>Enterprise Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header {
+            background: #17324d;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        header h1 {
+            margin: 0 0 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 3px solid #f4b400;
+            outline-offset: 2px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: 70vh;
+        }
+
+        aside {
+            background: #e9eef3;
+            padding: 1.5rem;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside li {
+            margin-bottom: 0.75rem;
+        }
+
+        aside a {
+            color: #17324d;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        article {
+            background: white;
+            border: 1px solid #d5dbe1;
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        article h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background: #e2e8f0;
+        }
+
+        form {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid #d5dbe1;
+            border-radius: 8px;
+            max-width: 700px;
+        }
+
+        fieldset {
+            border: 1px solid #cbd5e1;
+            padding: 1.25rem;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.35rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #64748b;
+            border-radius: 4px;
+            font: inherit;
+        }
+
+        button {
+            background: #17324d;
+            color: white;
+            border: 0;
+            padding: 0.7rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font: inherit;
+            font-weight: bold;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        dialog {
+            width: min(90%, 500px);
+            border: 0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background: #17324d;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Enterprise Dashboard</h1>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="components.html">Components</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="layout">
+
+    <aside aria-label="Sidebar navigation">
+        <h2>Quick Links</h2>
+
+        <nav aria-label="Sidebar navigation">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Form</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+
+        <section id="overview" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">Dashboard Overview</h2>
+
+            <div class="cards">
+
+                <article>
+                    <h3>Total Users</h3>
+                    <p>1,250</p>
+                </article>
+
+                <article>
+                    <h3>Active Projects</h3>
+                    <p>48</p>
+                </article>
+
+                <article>
+                    <h3>Completed Tasks</h3>
+                    <p>326</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Project Status</h2>
+
+            <table>
+                <caption>Current project status and ownership</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Project</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Owner</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Website Redesign</td>
+                        <td>In Progress</td>
+                        <td>Team A</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mobile Application</td>
+                        <td>Completed</td>
+                        <td>Team B</td>
+                    </tr>
+
+                    <tr>
+                        <td>Analytics Platform</td>
+                        <td>Planning</td>
+                        <td>Team C</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Form</h2>
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Contact Information</legend>
+
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input
+                            type="text"
+                            id="full-name"
+                            name="full-name"
+                            autocomplete="name"
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            aria-required="true"
+                            aria-describedby="email-help"
+                        >
+                        <small id="email-help">
+                            Enter a valid email address.
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select
+                            id="department"
+                            name="department"
+                            required
+                            aria-required="true"
+                        >
+                            <option value="">Select a department</option>
+                            <option value="sales">Sales</option>
+                            <option value="support">Support</option>
+                            <option value="development">Development</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit">Submit Form</button>
+                </fieldset>
+
+            </form>
+        </section>
+
+        <section aria-labelledby="dialog-heading">
+            <h2 id="dialog-heading">More Information</h2>
+
+            <button
+                type="button"
+                id="open-dialog"
+                aria-haspopup="dialog"
+            >
+                Open Details
+            </button>
+
+            <dialog id="details-dialog" aria-labelledby="details-title">
+                <h2 id="details-title">Dashboard Details</h2>
+
+                <p>
+                    This dashboard demonstrates semantic HTML5 structure,
+                    accessible forms, tables, navigation, and modal dialog behavior.
+                </p>
+
+                <button type="button" id="close-dialog">
+                    Close
+                </button>
+            </dialog>
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2026 Enterprise Dashboard</p>
+</footer>
+
+<script>
+    const dialog = document.getElementById("details-dialog");
+    const openButton = document.getElementById("open-dialog");
+    const closeButton = document.getElementById("close-dialog");
+
+    openButton.addEventListener("click", function () {
+        dialog.showModal();
+    });
+
+    closeButton.addEventListener("click", function () {
+        dialog.close();
+    });
+</script>
+
+</body>
+</html>
