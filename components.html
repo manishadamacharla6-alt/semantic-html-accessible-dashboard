@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Accessible HTML components for the enterprise dashboard."
+    >
+    <title>Accessible Components</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header,
+        footer {
+            background: #17324d;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #d5dbe1;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #17324d;
+            color: white;
+            border: 0;
+            padding: 0.7rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:focus,
+        a:focus,
+        input:focus {
+            outline: 3px solid #f4b400;
+            outline-offset: 2px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            padding: 0.7rem;
+            margin-top: 0.4rem;
+        }
+
+        dialog {
+            padding: 1.5rem;
+            border: 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Accessible Components</h1>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="components.html">Components</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section aria-labelledby="form-heading">
+        <h2 id="form-heading">Accessible Form</h2>
+
+        <form action="#" method="post">
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                aria-required="true"
+                autocomplete="username"
+            >
+
+            <br>
+
+            <button type="submit">Save</button>
+        </form>
+    </section>
+
+    <section aria-labelledby="dialog-heading">
+        <h2 id="dialog-heading">Accessible Dialog</h2>
+
+        <button type="button" id="show-dialog">
+            Open Dialog
+        </button>
+
+        <dialog id="component-dialog" aria-labelledby="component-dialog-title">
+            <h3 id="component-dialog-title">Component Information</h3>
+
+            <p>
+                This dialog is included to demonstrate an accessible
+                modal component.
+            </p>
+
+            <button type="button" id="hide-dialog">
+                Close Dialog
+            </button>
+        </dialog>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Enterprise Dashboard</p>
+</footer>
+
+<script>
+    const componentDialog =
+        document.getElementById("component-dialog");
+
+    document.getElementById("show-dialog")
+        .addEventListener("click", function () {
+            componentDialog.showModal();
+        });
+
+    document.getElementById("hide-dialog")
+        .addEventListener("click", function () {
+            componentDialog.close();
+        });
+</script>
+
+</body>
+</html>
